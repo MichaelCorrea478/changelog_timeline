@@ -28,6 +28,12 @@
 
                     <div class="timeline-body">
                         {{ $changelog->description }}
+
+                        <div>
+                            @foreach ($changelog->images() as $image)
+                                <img src="{{ $image->image }}" class="rounded mx-auto d-block">
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>

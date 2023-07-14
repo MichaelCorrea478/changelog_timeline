@@ -9,6 +9,8 @@ class Changelog extends Model
 {
     use HasFactory;
 
+    protected $table = 'changelogs';
+
     protected $fillable = [
         'title', 'description', 'release_date'
     ];
@@ -16,4 +18,9 @@ class Changelog extends Model
     protected $casts = [
         'release_date' => 'datetime'
     ];
+
+    function images()
+    {
+        return $this->hasMany(ChangelogImage::class);
+    }
 }

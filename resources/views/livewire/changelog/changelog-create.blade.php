@@ -20,8 +20,16 @@
                         <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
+                <div class="form-group mb-3">
+                    <label for="changelog_images" class="form-label">Imagens</label>
+                    <input type="file" class="form-control p-1" id="changelog_images" wire:model="changelog_images" multiple>
+
+                    @error('changelog_images')
+                        <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
                 <div class="form-group d-flex justify-content-end">
-                    <button class="btn btn-sm btn-secondary mx-2" wire:click.prevent="toogleForm">Cancelar</button>
+                    <button class="btn btn-sm btn-secondary mx-2" wire:click.prevent="toggleForm">Cancelar</button>
                     <button class="btn btn-sm btn-success">Salvar</button>
                 </div>
             </form>
